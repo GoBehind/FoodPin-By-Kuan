@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class AboutTableViewController: UITableViewController {
     
@@ -43,6 +44,10 @@ class AboutTableViewController: UITableViewController {
         return sectionContent[section].count
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitles[section]
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AboutCell", for: indexPath)
         let cellData = sectionContent[indexPath.section][indexPath.row]
@@ -52,8 +57,39 @@ class AboutTableViewController: UITableViewController {
         return cell
     }
     
-
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitles[section]
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let link = sectionContent[indexPath.section][indexPath.row].link
+        
+        switch indexPath.section {
+        //Leave us feedback 區塊
+        case 0:
+            if indexPath.row == 0 {
+                if let url = URL(string: link) {
+                    UIApplication.shared.open(url)
+                }
+            } else if indexPath.row == 1 {
+                performSegue(withIdentifier: "showWebView", sender: self)
+            }
+            
+        // Follow us 區塊
+        case 1:
+            if let url = URL(string: link) {
+                let safariController = SFSafariViewController(url: url)
+                present(safariController, animated: true, completion: nil)
+            }
+        default:
+            break
+        }
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showWebView" {
+            if let destinationController = segue.destination as? WebViewController,
+                let indexPath = tableView.indexPathForSelectedRow {
+                
+                destinationController.targetURL = sectionContent[indexPath.section][indexPath.row].link
+            }
+        }
     }
 }

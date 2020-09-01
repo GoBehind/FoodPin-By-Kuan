@@ -90,6 +90,11 @@
 	<string>You need to grant the app access to your camera in order to take photos.</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 </dict>
