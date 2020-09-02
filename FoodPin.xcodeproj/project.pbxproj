@@ -13,6 +13,8 @@
 		801D0183244AF29000DDA055 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801D0182244AF29000DDA055 /* Restaurant.swift */; };
 		8039FADD24F2412400449271 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8039FADB24F2412400449271 /* FoodPin.xcdatamodeld */; };
 		8045D1AC24F7E80200D3C872 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045D1AB24F7E80200D3C872 /* WalkthroughViewController.swift */; };
+		806DB42624FFD34B00AB1ECF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806DB42524FFD34B00AB1ECF /* CloudKit.framework */; };
+		806DB42824FFD51700AB1ECF /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806DB42724FFD51700AB1ECF /* DiscoverTableViewController.swift */; };
 		80780A2824E24CF5002A8518 /* RestaurantDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80780A2724E24CF5002A8518 /* RestaurantDetailHeaderView.swift */; };
 		80811F8524EBE4BD003D7BFA /* NewRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80811F8424EBE4BD003D7BFA /* NewRestaurantController.swift */; };
 		808D61CB24E93D3400F63C87 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808D61CA24E93D3400F63C87 /* ReviewViewController.swift */; };
@@ -47,6 +49,9 @@
 		801D0182244AF29000DDA055 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		8039FADC24F2412400449271 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		8045D1AB24F7E80200D3C872 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		806DB42424FFD34500AB1ECF /* FoodPin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodPin.entitlements; sourceTree = "<group>"; };
+		806DB42524FFD34B00AB1ECF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		806DB42724FFD51700AB1ECF /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		80780A2724E24CF5002A8518 /* RestaurantDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailHeaderView.swift; sourceTree = "<group>"; };
 		80811F8424EBE4BD003D7BFA /* NewRestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantController.swift; sourceTree = "<group>"; };
 		808D61CA24E93D3400F63C87 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80C92E2824E54129000271B0 /* MapKit.framework in Frameworks */,
+				806DB42624FFD34B00AB1ECF /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +142,7 @@
 				8045D1AB24F7E80200D3C872 /* WalkthroughViewController.swift */,
 				80D2B9C024FD3038000DBE18 /* AboutTableViewController.swift */,
 				80BEDF6B24FE2FC800D5DE20 /* WebViewController.swift */,
+				806DB42724FFD51700AB1ECF /* DiscoverTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,6 +150,7 @@
 		80C92E2624E54129000271B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				806DB42524FFD34B00AB1ECF /* CloudKit.framework */,
 				80C92E2724E54129000271B0 /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -168,6 +176,7 @@
 		80E94EE8243C28D3001DF25A /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				806DB42424FFD34500AB1ECF /* FoodPin.entitlements */,
 				80F7E8B624E4030D00C8B5E7 /* Extension */,
 				808F971A24E12E1F0030EB8E /* Storyboard */,
 				808F971B24E12E420030EB8E /* Model */,
@@ -288,6 +297,7 @@
 				80E94EEC243C28D3001DF25A /* SceneDelegate.swift in Sources */,
 				80E94F00243C2A5D001DF25A /* RestaurantTableViewController.swift in Sources */,
 				80C92E2E24E57C6A000271B0 /* MapViewController.swift in Sources */,
+				806DB42824FFD51700AB1ECF /* DiscoverTableViewController.swift in Sources */,
 				8039FADD24F2412400449271 /* FoodPin.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78K3R74X59;
 				INFOPLIST_FILE = FoodPin/Info.plist;
@@ -444,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78K3R74X59;
 				INFOPLIST_FILE = FoodPin/Info.plist;
