@@ -60,19 +60,22 @@ class DiscoverTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DiscoverCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DiscoverTableViewCell", for: indexPath) as! DiscoverTableViewCell
         //設定cell
         let restaurant = restaurants[indexPath.row]
-        cell.textLabel?.text = restaurant.object(forKey: "name") as? String
+        cell.discoverName.text = restaurant.object(forKey: "name") as? String
+        cell.discoverType.text = restaurant.object(forKey: "type") as? String
+        cell.discoverPhone.text = restaurant.object(forKey: "phone") as? String
+        cell.discoverLocation.text = restaurant.object(forKey: "location") as? String
         //設定cell圖片
-        cell.imageView?.image = UIImage(named: "photo")
+        cell.discoverImage.image  = UIImage(systemName: "photo")
         
         //檢查圖片是否存已儲存在快取中
         if let imageFileURL = imageCache.object(forKey: restaurant.recordID) {
             //從快取中取得圖片
             print("Get image from cache.")
             if let imageData = try? Data.init(contentsOf: imageFileURL as URL) {
-                cell.imageView?.image = UIImage(data: imageData)
+                cell.discoverImage.image  = UIImage(data: imageData)
             }
         } else {
             //在背景從雲端取得圖片
@@ -92,7 +95,7 @@ class DiscoverTableViewController: UITableViewController {
                     if let imageData = try? Data.init(contentsOf: imageAsset.fileURL!) {
                         //將預設圖片以iCloud圖片取代
                         DispatchQueue.main.async {
-                            cell.imageView?.image = UIImage(data: imageData)
+                            cell.discoverImage.image = UIImage(data: imageData)
                             cell.setNeedsLayout()
                         }
                         //加入圖片URL至快取
@@ -121,7 +124,7 @@ class DiscoverTableViewController: UITableViewController {
 
         //以query建立查詢動作
         let queryOperation = CKQueryOperation(query: query)
-        queryOperation.desiredKeys = ["name"]
+        queryOperation.desiredKeys = ["name", "type", "phone", "location"]
         queryOperation.queuePriority = .veryHigh
         queryOperation.resultsLimit = 50
         queryOperation.recordFetchedBlock = {(record) in
