@@ -107,7 +107,7 @@ class DiscoverTableViewController: UITableViewController {
         }
         return cell
     }
-    
+      
     @objc func fetchRecordsFromCloud() {
         
         //更新之前移除目前的資料記錄

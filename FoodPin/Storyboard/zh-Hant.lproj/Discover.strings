@@ -1,0 +1,18 @@
+
+/* Class = "UITabBarItem"; title = "Discover"; ObjectID = "1Js-ar-DkZ"; */
+"1Js-ar-DkZ.title" = "探索";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "89R-mU-OmG"; */
+"89R-mU-OmG.text" = "類型";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "cL0-zA-368"; */
+"cL0-zA-368.text" = "Name";
+
+/* Class = "UINavigationItem"; title = "Discover"; ObjectID = "cz3-zz-IAc"; */
+"cz3-zz-IAc.title" = "探索";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ljd-Pr-zBK"; */
+"ljd-Pr-zBK.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mBD-ao-ZhI"; */
+"mBD-ao-ZhI.text" = "Label";

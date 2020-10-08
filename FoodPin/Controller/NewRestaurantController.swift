@@ -76,12 +76,16 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         return true
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     // MARK: - UITableViewDelegate methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             
-            let photoSourceRequestController = UIAlertController(title: "", message: "Choose your photo source", preferredStyle: .actionSheet)
+            let photoSourceRequestController = UIAlertController(title: "", message: NSLocalizedString("Choose your photo source", comment: "Choose your photo source"), preferredStyle: .actionSheet)
             
             let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: { (action) in
                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -115,9 +119,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
                     popoverController.sourceRect = cell.bounds
                 }
             }
-            
             present(photoSourceRequestController, animated: true, completion: nil)
-            
         }
     }
 
@@ -151,7 +153,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
     @IBAction func saveButtonTapped(sender: AnyObject) {
         
         if nameTextField.text == "" || typeTextField.text == "" || addressTextField.text == "" || phoneTextField.text == "" || descriptionTextView.text == "" {
-            let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: NSLocalizedString("Oops", comment: "Oops"), message: NSLocalizedString("We can't proceed because one of the fields is blank. Please note that all fields are required.", comment: "We can't proceed because one of the fields is blank. Please note that all fields are required.") , preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(alertAction)
             present(alertController, animated: true, completion: nil)
@@ -175,7 +177,8 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             restaurant.isVisited = false
             
             if let restaurantImage = photoImageView.image {
-                restaurant.image = restaurantImage.pngData()
+                restaurant.image = restaurantImage.jpegData(compressionQuality: 1.0)
+                //restaurant.image = restaurantImage.pngData()
             }
             
             print("Saving data to context ...")
@@ -216,6 +219,10 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
         
         //儲存資料至iCloud
         publicDatabase.save(record) { (record, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
             //移除暫存檔
             try? FileManager.default.removeItem(at: imageFileURL)
         }

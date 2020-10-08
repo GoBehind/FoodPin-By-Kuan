@@ -58,7 +58,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         //self.navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search restaurants..."
+        searchController.searchBar.placeholder = NSLocalizedString("Search restaurants...", comment: "Search restaurants...")
         searchController.searchBar.barTintColor = .white
         searchController.searchBar.backgroundImage = UIImage()
         searchController.searchBar.tintColor = UIColor(red: 231, green: 76, blue: 60)
@@ -147,7 +147,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         }
         
         let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completionHandler) in
-            let defaultText = "Just Checking in at " + self.restaurants[indexPath.row].name!
+            let defaultText = NSLocalizedString("Just Checking in at ", comment: "Just Checking in at ")  + self.restaurants[indexPath.row].name!
             let activityController : UIActivityViewController
             if let restaurantImage = self.restaurants[indexPath.row].image, let imageToShare = UIImage(data: restaurantImage as Data){
                 activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)

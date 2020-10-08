@@ -8,10 +8,12 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var mapView: MKMapView!
+    var selectedAnnotation: MKPointAnnotation!
     
     var restaurant: RestaurantMO!
 
@@ -69,6 +71,48 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         annotationView?.glyphText = "😋"
         annotationView?.markerTintColor = UIColor.orange
         
+        let button = UIButton(type: .detailDisclosure)
+        button.addTarget(self, action: #selector(buttonPress(sender:)), for: .touchUpInside)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(buttonPress(sender:)))
+        tap.numberOfTapsRequired = 1
+        annotationView?.addGestureRecognizer(tap)
+        
         return annotationView
+    }
+    
+    @objc func buttonPress(sender:Any){
+        print("Comes")
+        negativeTo(address: restaurant.location ?? "")
+    }
+    
+    func negativeTo(address: String) {
+        let geocoder  = CLGeocoder()
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            //有error就被擋
+            if let error = error{
+                print("geocodeArrressSting: \(error)")
+                return
+            }
+            
+            guard let placemark = placemarks?.first,
+                let coordinate = placemark.location?.coordinate else{
+                    assertionFailure("Invalid placemark")
+                    return
+            }
+            print("Lat , Lon: \(coordinate.latitude), \(coordinate.longitude) ")
+            //Prepare source map item
+            let sourceCoordinate = CLLocationCoordinate2D(latitude: 23.686525, longitude: 121.815312)
+            let sourcePlacemark = MKPlacemark(coordinate: sourceCoordinate)
+            let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+            
+            
+            //Prepare targer map item
+            let targetPlaceMark = MKPlacemark(placemark: placemark)
+            let targetMapItem = MKMapItem(placemark: targetPlaceMark)
+            let options = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
+            targetMapItem.openInMaps(launchOptions: options)
+            //sourceMapItem是起點, targerMapItem是終點
+            MKMapItem.openMaps(with: [sourceMapItem, targetMapItem], launchOptions: options)
+        }
     }
 }

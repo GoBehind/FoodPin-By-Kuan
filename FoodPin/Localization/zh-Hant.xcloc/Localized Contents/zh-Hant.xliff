@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="FoodPin/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="zh-Hant">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0" build-num="12A7209"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>FoodPin</source>
+        <note>Bundle name</note>
+      </trans-unit>
+      <trans-unit id="NSCameraUsageDescription" xml:space="preserve">
+        <source>You need to grant the app access to your camera in order to take photos.</source>
+        <target>您需要授予我們相機的權限得以拍攝照片。</target>
+        <note>Privacy - Camera Usage Description</note>
+      </trans-unit>
+      <trans-unit id="NSPhotoLibraryUsageDescription" xml:space="preserve">
+        <source>You need to grant the app access to your photo library so you can pick your favorite restaurant photo.</source>
+        <target>您需要授予我們相簿的權限以取得相片</target>
+        <note>Privacy - Photo Library Usage Description</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="FoodPin/en.lproj/Localizable.strings" datatype="plaintext" source-language="en" target-language="zh-Hant">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="12.0" build-num="12A7209"/>
+    </header>
+    <body>
+      <trans-unit id="CREATE YOUR OWN FOOD GUIDE" xml:space="preserve">
+        <source>CREATE YOUR OWN FOOD GUIDE</source>
+        <target>創建您自己的美食地圖</target>
+        <note>CREATE YOUR OWN FOOD GUIDE</note>
+      </trans-unit>
+      <trans-unit id="Choose your photo source" xml:space="preserve">
+        <source>Choose your photo source</source>
+        <target>選擇相片來源</target>
+        <note>Choose your photo source</note>
+      </trans-unit>
+      <trans-unit id="DISCOVER GREAT RESTAURANTS" xml:space="preserve">
+        <source>DISCOVER GREAT RESTAURANTS</source>
+        <target>發掘更多值得探訪的餐廳</target>
+        <note>DISCOVER GREAT RESTAURANTS</note>
+      </trans-unit>
+      <trans-unit id="Feedback" xml:space="preserve">
+        <source>Feedback</source>
+        <target>意見回饋</target>
+        <note>Feedback</note>
+      </trans-unit>
+      <trans-unit id="Find restaurants shared by your friends and other foodies" xml:space="preserve">
+        <source>Find restaurants shared by your friends and other foodies</source>
+        <target>查找由您的朋友和其他美食家分享的餐廳</target>
+        <note>Find restaurants shared by your friends and other foodies</note>
+      </trans-unit>
+      <trans-unit id="Follow Us" xml:space="preserve">
+        <source>Follow Us</source>
+        <target>追蹤我們</target>
+        <note>Follow Us</note>
+      </trans-unit>
+      <trans-unit id="GET STARTED" xml:space="preserve">
+        <source>GET STARTED</source>
+        <target>開始吧！</target>
+        <note>GET STARTED</note>
+      </trans-unit>
+      <trans-unit id="HOW TO GET HERE" xml:space="preserve">
+        <source>HOW TO GET HERE</source>
+        <target>如何抵達</target>
+        <note>HOW TO GET HERE</note>
+      </trans-unit>
+      <trans-unit id="Just Checking in at " xml:space="preserve">
+        <source>Just Checking in at </source>
+        <target>來看看吧！</target>
+        <note>Just Checking in at</note>
+      </trans-unit>
+      <trans-unit id="NEXT" xml:space="preserve">
+        <source>NEXT</source>
+        <target>下一步</target>
+        <note>NEXT</note>
+      </trans-unit>
+      <trans-unit id="Oops" xml:space="preserve">
+        <source>Oops</source>
+        <target>糟糕！</target>
+        <note>Oops</note>
+      </trans-unit>
+      <trans-unit id="Pin your favorite restaurants and create your own food guide" xml:space="preserve">
+        <source>Pin your favorite restaurants and create your own food guide</source>
+        <target>標記您喜愛的餐廳及創建您自己的美食地圖</target>
+        <note>Pin your favorite restaurants and create your own food guide</note>
+      </trans-unit>
+      <trans-unit id="Rate us on App Store" xml:space="preserve">
+        <source>Rate us on App Store</source>
+        <target>在App Store上給予我們評分</target>
+        <note>Rate us on App Store</note>
+      </trans-unit>
+      <trans-unit id="SHOW YOU THE LOCATION" xml:space="preserve">
+        <source>SHOW YOU THE LOCATION</source>
+        <target>顯示地點</target>
+        <note>SHOW YOU THE LOCATION</note>
+      </trans-unit>
+      <trans-unit id="Search and locate your favourite restaurant on Maps" xml:space="preserve">
+        <source>Search and locate your favourite restaurant on Maps</source>
+        <target>尋找及定位您喜愛的餐廳</target>
+        <note>Search and locate your favourite restaurant on Maps</note>
+      </trans-unit>
+      <trans-unit id="Search restaurants..." xml:space="preserve">
+        <source>Search restaurants...</source>
+        <target>尋找餐廳...</target>
+        <note>Search restaurants...</note>
+      </trans-unit>
+      <trans-unit id="Tell us your feedback" xml:space="preserve">
+        <source>Tell us your feedback</source>
+        <target>請給予我們你的意見回饋</target>
+        <note>Tell us your feedback</note>
+      </trans-unit>
+      <trans-unit id="We can't proceed because one of the fields is blank. Please note that all fields are required." xml:space="preserve">
+        <source>We can't proceed because one of the fields is blank. Please note that all fields are required.</source>
+        <target>其中一欄資料尚未填寫，我們目前無法處理。請確認所有欄位！</target>
+        <note>We can't proceed because one of the fields is blank. Please note that all fields are required.</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
